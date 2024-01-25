@@ -36,7 +36,6 @@ class GameBoard {
     let x = pos1.split('');
     x.length === 3? x = 10 : x = x.pop();
     let y = pos1.split('')[0];
-    console.log(x);
 
     if (orientation === '-') {
       for (let i = ship.length; i > 1; i--) {
