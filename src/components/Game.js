@@ -12,6 +12,7 @@ class Ship {
   }
   hit() {
     this.hits += 1;
+    this.isSunk()
   }
 }
 
@@ -45,7 +46,7 @@ class GameBoard {
           placements.push(tempPos);
         } else return 'N/A';
       }
-
+      console.log(placements);
     }
     else if (orientation === "|") {
       for (let i = ship.length; i > 1; i--) {
@@ -86,10 +87,17 @@ class GameBoard {
     else {
       return "not allowed";
     }
+
+    if (placements.length > 1) {
+      for (let places of placements) {
+        this.positions[places] = ship;
+      }
+    }
+    console.log(this.positions);
   }
   receiveAttack(pos) {
-    if (this.positions[pos]) {
-
+    if (this.positions[pos] instanceof Ship) {
+      this.positions[pos].hit()
     }
   }
 }
@@ -97,4 +105,6 @@ class GameBoard {
 const ship1 = new Ship(5);
 const game = new GameBoard();
 
-game.placeShip('\\', 'f5', ship1);
+game.placeShip('/', 'f5', ship1);
+game.receiveAttack('f5')
+
