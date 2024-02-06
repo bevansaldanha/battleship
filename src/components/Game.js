@@ -98,6 +98,8 @@ class GameBoard {
   receiveAttack(pos) {
     if (this.positions[pos] instanceof Ship) {
       this.positions[pos].hit()
+    } else {
+      this.positions[pos] = 'Miss'
     }
   }
 }
