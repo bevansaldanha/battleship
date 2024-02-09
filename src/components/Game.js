@@ -128,7 +128,7 @@ class Player {
 const ship1 = new Ship(5);
 const game = new GameBoard();
 
-game.placeShip('/', 'f5', ship1);
+game.placeShip('\\', 'f5', ship1);
 game.receiveAttack('f5')
 
 export {GameBoard, Ship, Player}
