@@ -13,6 +13,7 @@ class Ship {
   hit() {
     this.hits += 1;
     this.isSunk()
+    console.log("HELLO");
   }
 }
 
@@ -111,10 +112,15 @@ class GameBoard {
     }
   }
   receiveAttack(pos) {
-    if (this.positions[pos] instanceof Ship) {
-      this.positions[pos].hit()
+    let x = pos.split('')
+    x.length === 3? x = 10 : x = x.pop();
+    let y = pos.split('')[0];
+    console.log(this.positions[y][x-1]);
+
+    if (this.positions[y][x-1] instanceof Ship) {
+      this.positions[y][x-1].hit()
     } else {
-      this.positions[pos] = 'Miss'
+      this.positions[y][x-1] = 'Miss'
     }
   }
 }
@@ -128,7 +134,6 @@ class Player {
 const ship1 = new Ship(5);
 const game = new GameBoard();
 
-game.placeShip('\\', 'f5', ship1);
-game.receiveAttack('f5')
-
+// game.placeShip('\\', 'f5', ship1);
+// game.receiveAttack('f5')
 export {GameBoard, Ship, Player}
