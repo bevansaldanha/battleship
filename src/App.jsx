@@ -7,11 +7,10 @@ import { GameBoard, Player, Ship } from './components/Game';
 
 function App() {
 
-  const playerBoard = new GameBoard();
-  // const compBoard = new GameBoard()
+  const playerBoard = new GameBoard('player');
+  const compBoard = new GameBoard('comp');
 
   const [count, setCount] = useState(0);
-
 
 
 
@@ -21,8 +20,9 @@ function App() {
       <div className="card">
         <main>
 
-          <Grid playerBoard={playerBoard} />
-          <Grid playerBoard={playerBoard} />
+          <Grid boards={playerBoard} />
+          <Grid boards={compBoard} />
+
         </main>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

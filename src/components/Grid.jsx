@@ -1,29 +1,28 @@
 import '../Grid.css';
 const Grid = (props) => {
-  const { playerBoard } = props;
-  const grid = Object.keys(playerBoard.positions).map(function(key, index) {
+  const { boards } = props;
 
-    const row = Object.keys(playerBoard.positions[key]).map(function(key1, index1) {
+    const grid = Object.keys(boards.positions).map(function(key, index) {
+
+      const row = Object.keys(boards.positions[key]).map(function(key1, index1) {
+        return (
+          <td key={boards.type +index1 + 1}>{index1 + 1}</td>
+        );
+      });
       return (
-          <td key={index1+1}>{index1+1}</td>
+        <tr >
+          {row}
+        </tr>
       );
-    })
+    });
+
     return (
-      <tr key={index}>
-        {row}
-      </tr>
+        <table key={boards.type}>
+          {grid}
+        </table>
     );
 
-  });
 
-  return (
-    <table className="grid">
-      <tbody>
-        {grid}
-      </tbody>
-    </table>
-
-  );
 };
 
 export default Grid;
