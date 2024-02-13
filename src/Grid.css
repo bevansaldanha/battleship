@@ -19,11 +19,9 @@ td {
 
 table {
   border-collapse: collapse;
-  border: 2px solid rgb(7, 2, 2);
-  margin: 10%;
+  margin: 100px 100px 0px 10px;
   font-family: sans-serif;
   font-size: 0.8rem;
-  padding: 10px;
 }
 
 caption {

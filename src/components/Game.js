@@ -128,7 +128,7 @@ class GameBoard {
 
 class Player {
   constructor(){
-
+    this.name = ''
   }
 }
 

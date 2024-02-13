@@ -45,3 +45,12 @@ main {
   display: flex;
   justify-content: space-evenly;
 }
+div.names{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: larger;
+  font-weight: 500;
+  margin: 2%;
+  margin-left: 4%;
+}
